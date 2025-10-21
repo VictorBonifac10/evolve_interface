@@ -1,3 +1,5 @@
+import { Button, Header } from "../../components";
+
 import { Banner, ContainerTop, ContentLeft, ContentRight, FirstDescription, SecondDescription } from "./styles";
 
 import Logo from '../../assets/Logo.png'
@@ -6,6 +8,7 @@ import videoBanner from '../../assets/videoBanner.mp4'
 export function Home() {
     return (
         <>
+            <Header />
             <ContainerTop>
                 <Banner>
                     <video src={videoBanner} preload="none" autoPlay muted loop></video>
@@ -18,12 +21,15 @@ export function Home() {
                             </FirstDescription>
                             <SecondDescription>
                                 Desenvolvemos soluções personalizadas com preço acessível para levar sua empresa ao próximo nível.
-                            </SecondDescription>|
+                            </SecondDescription>
+                            
+                            <Button>Veja mais <i className="ri-arrow-right-down-long-line"></i></Button>
+
                         </ContentLeft>
                         <ContentRight>
-                            <i class="ri-whatsapp-line"></i>
-                            <i class="ri-google-line"></i>
-                            <i class="ri-instagram-line"></i>
+                            <i className="ri-whatsapp-line"></i>
+                            <i className="ri-google-line"></i>
+                            <i className="ri-instagram-line"></i>
                         </ContentRight>
                     </div>
                 </Banner>

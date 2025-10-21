@@ -1,21 +1,20 @@
 import styled from 'styled-components'
 
 export const ContainerTop = styled.div`
-
-    display: flex;
-    align-items: center;
-
     width: 100%;
     height: 100vh;
-
-    padding: 50px;
-
+    padding: 0px 50px 50px 50px;
     
     img{
         position: relative;
         z-index: 2;
 
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+
+        @media (max-width: 1085px) {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
     }
 
     .containerBanner{
@@ -23,8 +22,17 @@ export const ContainerTop = styled.div`
         display: flex;
         align-items: center;
 
+        @media (max-width: 1085px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 25px;
+
+            margin-top: 100px;
+        }
     }
-`
+`;
 
 export const Banner = styled.div`
 
@@ -50,7 +58,18 @@ export const Banner = styled.div`
 
 `
 
-export const ContentLeft = styled.div``
+export const ContentLeft = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 1085px) {
+        align-items: center;
+    }
+`
 
 export const FirstDescription = styled.p`
     max-width: 65%;
@@ -61,8 +80,15 @@ export const FirstDescription = styled.p`
     position: relative;
     z-index: 2;
 
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 50px;
+
+    @media (max-width: 1085px) {
+        font-size: 28px;
+        line-height: 34px;
+        max-width: 90%;
+        text-align: center;
+    }
 `
 
 export const SecondDescription = styled.p`
@@ -73,6 +99,14 @@ export const SecondDescription = styled.p`
 
     position: relative;
     z-index: 2;
+
+    margin-bottom: 10px;
+
+    @media (max-width: 1085px) {
+        font-size: 15px;
+        max-width: 70%;
+    }
+
 `
 
 export const ContentRight = styled.div`
@@ -86,6 +120,12 @@ export const ContentRight = styled.div`
     i{
         color: #fff;
         font-size: 25px;
+    }
+
+    @media (max-width: 1085px) {
+        flex-direction: row;
+        justify-content: center;
+
     }
 
 `
