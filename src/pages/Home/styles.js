@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import {styled, keyframes} from 'styled-components'
+
+export const ContainerBody = styled.div`
+    background-color: #070707ff;
+`
 
 export const ContainerTop = styled.div`
     width: 100%;
@@ -47,7 +51,7 @@ export const Banner = styled.div`
     }
 
     .mask{
-        background: linear-gradient(109deg, rgba(10, 12, 16, 0.90) 15%, rgba(10, 12, 16, 0.60) 50%, rgba(10, 12, 16, 0.90) 85%);
+        background: linear-gradient(109deg, rgba(10, 12, 16, 0.90) 15%, rgba(10, 12, 16, 0.21) 50%, rgba(10, 12, 16, 0.90) 85%);
         position: absolute;
         top: 0;
         left: 0;
@@ -56,7 +60,7 @@ export const Banner = styled.div`
         z-index: 1;
     }
 
-`
+`;
 
 export const ContentLeft = styled.div`
 
@@ -69,7 +73,7 @@ export const ContentLeft = styled.div`
     @media (max-width: 1085px) {
         align-items: center;
     }
-`
+`;
 
 export const FirstDescription = styled.p`
     max-width: 65%;
@@ -89,7 +93,7 @@ export const FirstDescription = styled.p`
         max-width: 90%;
         text-align: center;
     }
-`
+`;
 
 export const SecondDescription = styled.p`
     max-width: 50%;
@@ -100,14 +104,14 @@ export const SecondDescription = styled.p`
     position: relative;
     z-index: 2;
 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
     @media (max-width: 1085px) {
         font-size: 15px;
         max-width: 70%;
     }
 
-`
+`;
 
 export const ContentRight = styled.div`
     position: relative;
@@ -127,5 +131,79 @@ export const ContentRight = styled.div`
         justify-content: center;
 
     }
+`;
 
-`
+export const ContainerMain = styled.main`
+    padding: 80px;
+`;
+
+export const ContainerAbout = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 10px;
+`;
+
+export const Text = styled.div`
+    color: #fff;
+    max-width: 50%;
+`;
+
+
+//animation
+
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const CircleWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const RotatingText = styled.div`
+  position: absolute;
+  top: -30px; /* ajusta a posição acima da imagem */
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  color: #007aff;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: lowercase;
+  animation: ${rotate} 8s linear infinite;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+  }
+
+  text {
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 3px;
+  }
+`;
+
+export const ImageBox = styled.div`
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+`;
