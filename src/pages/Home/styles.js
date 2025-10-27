@@ -1,8 +1,10 @@
-import {styled, keyframes} from 'styled-components'
+import { styled } from 'styled-components'
 
 export const ContainerBody = styled.div`
-    background-color: #070707ff;
-`
+    background-color: rgba(5, 6, 8, 1);
+    background-image: radial-gradient(#1C1C1C 0.7px, transparent 0.7px);
+    background-size: 25px 25px;
+  `;
 
 export const ContainerTop = styled.div`
     width: 100%;
@@ -14,6 +16,7 @@ export const ContainerTop = styled.div`
         z-index: 2;
 
         margin-bottom: 30px;
+        
 
         @media (max-width: 1085px) {
             max-width: 200px;
@@ -25,6 +28,7 @@ export const ContainerTop = styled.div`
 
         display: flex;
         align-items: center;
+        
 
         @media (max-width: 1085px) {
             flex-direction: column;
@@ -41,23 +45,61 @@ export const ContainerTop = styled.div`
 export const Banner = styled.div`
 
     video{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
     }
 
     .mask{
-        background: linear-gradient(109deg, rgba(10, 12, 16, 0.90) 15%, rgba(10, 12, 16, 0.21) 50%, rgba(10, 12, 16, 0.90) 85%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 1;
+      background: linear-gradient(109deg, rgba(10, 12, 16, 0.90) 15%, rgba(10, 12, 16, 0.21) 50%, rgba(10, 12, 16, 0.90) 85%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .mouse {
+      width: 25px;
+      height: 42px;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .wheel {
+      width: 6px;
+      height: 6px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scroll 1.5s infinite;
+    }
+
+    @keyframes scroll {
+      0% { opacity: 0; transform: translate(-50%, 0); }
+      40% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, 20px); }
     }
 
 `;
@@ -134,76 +176,141 @@ export const ContentRight = styled.div`
 `;
 
 export const ContainerMain = styled.main`
-    padding: 80px;
 `;
 
 export const ContainerAbout = styled.div`
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    gap: 120px;
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    gap: 90px;
+  }
+
+  .aboutText{
+      @media (max-width: 1300px) {
+        text-align: center;
+      }
+  }
+
+  .aboutImage {
+    position: relative;
+    width: 450px;
+    height: 450px;
+}
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  /* animate circle */
+
+  .rotating-container {
+    position: absolute;
+    top: -85px;   
+    right: -75px;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    animation: rotate-text 10s linear infinite;
+  }
+
+  .inner-circle {
+    fill: #00fbff96;
+  }
+
+  #text-on-path {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    fill: #00fbff96;
+  }
+
+  @keyframes rotate-text {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .aboutImage {
+      width: auto;
+      height: 400px;
+    }
+    
+    .rotating-container{
+      right: 280px;
+    }
+}
+
 `;
 
 export const Text = styled.div`
     color: #fff;
-    max-width: 50%;
+    max-width: 500px;
 `;
 
-
-//animation
-
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const CircleWrapper = styled.div`
-  position: relative;
-  display: inline-block;
-`;
-
-export const RotatingText = styled.div`
-  position: absolute;
-  top: -30px; /* ajusta a posição acima da imagem */
-  right: -30px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  color: #007aff;
-  font-weight: 500;
-  font-size: 14px;
-  text-transform: lowercase;
-  animation: ${rotate} 8s linear infinite;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
+export const ContainerServices = styled.div`
+    padding: 0px 150px 0px 150px;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
-    fill: none;
-  }
-
-  text {
-    font-family: "Poppins", sans-serif;
-    letter-spacing: 3px;
-  }
+    height: 100vh;
 `;
 
-export const ImageBox = styled.div`
-  width: 250px;
-  height: 250px;
-  background: #fff;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #000;
-  position: relative;
+export const ContainerPortfolio = styled.div`
+    position: relative;
+    width: 100%;
+    overflow: hidden; 
+    margin: 140px 0 30px 0;
+    padding: 20px 50px 15px 150px;
+    color: #fff;
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+    
 `;
+
+export const Mask = styled.div`
+      background: linear-gradient(109deg, rgba(10, 12, 16, 0.90) 15%, rgba(10, 12, 16, 0.21) 50%, rgba(10, 12, 16, 0.90) 85%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+`;
+
+export const ContainerClients = styled.div`
+
+    padding: 0px 150px 0px 150px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+
+
+`
+
+
