@@ -1,9 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import Person from '../../assets/person.jpg'
 
@@ -26,7 +27,8 @@ export function ClientCarousel() {
                     slideShadows: true,
                 }}
                 pagination={true}
-                modules={[EffectCoverflow, Pagination]}
+                navigation={true}
+                modules={[EffectCoverflow, Pagination, Navigation]}
                 className="mySwiper"
             >
                 <SwiperSlide>

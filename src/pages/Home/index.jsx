@@ -1,6 +1,6 @@
 import { Button, ClientCarousel, Header, ServicesCards, SupportButton, Title } from "../../components";
 
-import { ContainerBody, Banner, ContainerTop, ContentLeft, ContentRight, FirstDescription, SecondDescription, ContainerMain, ContainerAbout, Text, ContainerServices, ContainerPortfolio, Mask, ContainerClients } from "./styles";
+import { ContainerBody, Banner, ContainerTop, ContentLeft, ContentRight, FirstDescription, SecondDescription, ContainerMain, ContainerAbout, Text, ContainerServices, ContainerPortfolio, Mask, ContainerClients, ContainerContact, ContactCard, ContainerFooter } from "./styles";
 
 import Logo from '../../assets/Logo.png'
 import videoBanner from '../../assets/videoBanner.mp4'
@@ -95,7 +95,68 @@ export function Home() {
                     <Title>Clientes</Title>
                     <ClientCarousel />
                 </ContainerClients>
+                <ContainerContact>
+                    <div className="content">
+                        <Title>Contato</Title>
+                        <Text>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nobis sunt sapiente nihil voluptas obcaecati, dolores deserunt id omnis. Laudantium autem quisquam possimus debitis officiis sapiente, et quas eligendi totam?et consectetur adipisicing elit. Odio nobis sunt sapiente nihil voluptas obcaecati, dolores deserunt id omnis. Laudantiu
+                            <br /><br />
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nobis sunt sapiente nihil voluptas obcaecati, dolores deserunt id omnis. Laudantium autem quisquam possimus debitis officiis sapiente, et quas eligendi totam?
+                        </Text>
+                    </div>
+                    <div className="content-contact-card">
+                        <ContactCard>
+                            <div>
+                                <i className="ri-whatsapp-line"></i>
+                                <h3>WhatsApp</h3>
+                            </div>
+                            <p>+55(16)9908-3476</p>
+                        </ContactCard>
+                        <ContactCard>
+                            <div>
+                                <i className="ri-google-line"></i>
+                                <h3>Email</h3>
+                            </div>
+                            <p>evolvesolutions@gmail.com</p>
+                        </ContactCard>
+                        <ContactCard>
+                            <div>
+                                <i className="ri-instagram-line"></i>
+                                <h3>Instagram</h3>
+                            </div>
+                            <p>@evolvesolutions</p>
+                        </ContactCard>
+                    </div>
+                </ContainerContact>
             </ContainerMain>
+            <ContainerFooter>
+                <img src={Logo} alt='Logo da Empresa' />
+                <Text>
+                    Lorem, ipsum dolor sit am Laudantium autem quisquam possimus debitis officiis sapiente, et quas eligendi totam!
+                </Text>
+                <ul>
+                    <li>
+                        Home
+                    </li>
+                    <li>
+                        Portfólio
+                    </li>
+                    <li>
+                        Contato
+                    </li>
+                    <li>
+                        Termos e Condições
+                    </li>
+                </ul>
+                <div>
+                    <i className="ri-whatsapp-line"></i>
+                    <i className="ri-google-line"></i>
+                    <i className="ri-instagram-line"></i>
+                </div>
+                <Text>
+                    © 2025 evolve solutions - All rights reserved.
+                </Text>
+            </ContainerFooter>
         </ContainerBody>
     )
 }

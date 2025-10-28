@@ -261,8 +261,6 @@ export const Text = styled.div`
 
 export const ContainerServices = styled.div`
     padding: 0px 150px 0px 150px;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100vh;
 `;
@@ -272,7 +270,7 @@ export const ContainerPortfolio = styled.div`
     width: 100%;
     overflow: hidden; 
     margin: 140px 0 30px 0;
-    padding: 20px 50px 15px 150px;
+    padding: 20px 50px 25px 150px;
     color: #fff;
 
     video {
@@ -304,13 +302,126 @@ export const Mask = styled.div`
 
 export const ContainerClients = styled.div`
 
+    margin: 140px 0 30px 0;
     padding: 0px 150px 0px 150px;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100vh;
 
-
 `
+
+export const ContainerContact = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+
+  width: 100%;
+  margin-bottom: 200px ;
+
+  .content-contact-card{
+    margin-top: 50px;
+  }
+`;
+
+export const ContactCard = styled.div`
+  border: 1px solid rgba(255, 255, 255, 0.29);
+  border-radius: 8px;
+  width: 450px;
+  margin-bottom: 20px;
+  padding: 6px 20px 6px 20px;
+  color: #fff;
+  transition: 1s;
+  background: linear-gradient(318deg, #2814da2b, #c012a627, #00aaff34, #1b1b1b3e, #0000002b);
+  background-size: 1000% 1000%;
+  
+-webkit-animation: Coolgradient 41s linear infinite;
+-moz-animation: Coolgradient 41s linear infinite;
+-o-animation: Coolgradient 41s linear infinite;
+animation: Coolgradient 41s linear infinite;
+
+@-webkit-keyframes Coolgradient {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@-moz-keyframes Coolgradient {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@-o-keyframes Coolgradient {
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+@keyframes Coolgradient { 
+    0%{background-position:5% 0%}
+    50%{background-position:96% 100%}
+    100%{background-position:5% 0%}
+}
+
+&:hover{
+
+      transform: scale(1.05);
+      border: 1px solid #fff;
+
+}
+
+div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  i{
+    font-size: 30px;
+  }
+
+  h3{
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+p{
+  color: #808080ff;
+  margin: 0;
+}
+
+`;
+
+export const ContainerFooter = styled.footer`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 40px;
+
+  img{
+    width: 250px;
+  }
+
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    i{
+      color: #fff;
+      font-size: 20px;
+
+    }
+
+    ul{
+      display: flex;
+    }
+
+  }
+`;
+
+
+
 
 
