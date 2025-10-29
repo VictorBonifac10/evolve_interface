@@ -1,49 +1,75 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-    background-color: #000;
-    border: 1px solid #00fbff96;
-    border-radius: 8px;
-    padding: 12px;
-    width: 320px;
-    font-size: 12px;
+  background-color: #000;
+  border: 1px solid #00fbff96;
+  border-radius: 8px;
+  padding: 12px;
+  width: clamp(200px, 80vw, 320px); /* 🔥 Responsivo */
+  font-size: 12px;
 
-    position: fixed;
-    z-index: 3;
-    bottom: 2px;
-    right: 2px;
+  position: fixed;
+  z-index: 3;
+  bottom: 20px;
+  right: 20px; /* use valores fixos em vez de margin */
+  
+  display: flex;
+  align-items: center;
+  text-align: start;
+  gap: 14px;
 
-    margin: 20px;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
 
-    display: flex;
-    align-items: center;
-    text-align: start;
-    gap: 14px;
+  background-image: linear-gradient(to right, #00fbff96 0%, #0095ff8b 0%, #000 100%);
+  background-size: 200% 150%;
+  background-position: right bottom;
+  transition: background-position 0.4s ease-out, color 0.3s ease;
 
-    color: #fff;
-    cursor: pointer;
-    overflow: hidden;
+  h2 {
+    font-size: 17px;
+    color: #00fbff96;
     transition: color 0.3s ease;
+  }
 
-    background-image: linear-gradient(to right, #00fbff96 0%, #0095ff8b 0%, #000 100%);
-    background-size: 200% 150%;
-    background-position: right bottom;
-    transition: background-position 0.4s ease-out, color 0.3s ease;
+  i {
+    font-size: 30px;
+    color: #00fbff96;
+    transition: color 0.3s ease;
+  }
+
+  &:hover {
+    background-position: left bottom;
+    border: 1px solid #b3d69bff;
+  }
+
+  /* 🔧 Ajustes extras para telas pequenas */
+  @media (max-width: 480px) {
+    right: 10px;
+    bottom: 10px;
+    padding: 10px;
+    gap: 10px;
 
     h2 {
-        font-size: 17px;
-        color: #00fbff96;
-        transition: color 0.3s ease;
+      font-size: 15px;
     }
 
     i {
-        font-size: 30px;
-        color: #00fbff96;
-        transition: color 0.3s ease;
+      font-size: 24px;
     }
+  }
 
-    &:hover {
-        background-position: left bottom;
-        border: 1px solid #b3d69bff;
+  @media (max-width: 360px) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw; /* garante que não vaze */
+    h2 {
+      font-size: 14px;
     }
+    p {
+      font-size: 12px;
+    }
+  }
 `;

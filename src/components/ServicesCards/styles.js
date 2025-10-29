@@ -2,12 +2,17 @@ import styled from "styled-components";
 
 export const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0px 10px 0px;
+  padding: 40px 16px;
+  /* altura removida */
+  /* height: 100vh; */
+
+  /* cria espaço embaixo para não colar no vídeo */
+  margin-bottom: 100px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -15,7 +20,10 @@ export const CardGrid = styled.div`
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
+    padding: 20px 10px;
+    margin-bottom: 80px;
   }
+
 `;
 
 export const Card = styled.div`

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ContainerCarousel = styled.div`
 
 .mySwiper{
@@ -12,6 +11,7 @@ export const ContainerCarousel = styled.div`
     padding: 20px;
     width: 600px;
     height: 400px;
+  
 }
 
 .mySwiper .swiper-button-next,

@@ -111,6 +111,7 @@ export const ContentLeft = styled.div`
     align-items: flex-start;
     position: relative;
     z-index: 2;
+    margin-top: 90px;
 
     @media (max-width: 1085px) {
         align-items: center;
@@ -166,6 +167,12 @@ export const ContentRight = styled.div`
     i{
         color: #fff;
         font-size: 25px;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover{
+        transform: scale(1.5);
+      }
     }
 
     @media (max-width: 1085px) {
@@ -392,7 +399,7 @@ export const ContainerFooter = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
   align-items: center;
   text-align: center;
   width: 100%;
@@ -402,22 +409,33 @@ export const ContainerFooter = styled.footer`
     width: 250px;
   }
 
+  ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+
+  li{
+    color: #fff;
+    font-size: 14px;
+    }
+  }
+
   div{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 
     i{
       color: #fff;
       font-size: 20px;
+      transition: 0.5s;
+      cursor: pointer;
 
+      &:hover{
+        transform: scale(1.5);
+      }
     }
-
-    ul{
-      display: flex;
-    }
-
   }
 `;
 

@@ -1,39 +1,77 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { CustomNavbar } from './styles';
+import { useState, useEffect } from 'react'
+import {
+    CContainer,
+    CNavbarNav,
+    CNavItem,
+    COffcanvasHeader,
+    COffcanvasTitle,
+    COffcanvasBody,
+    CCloseButton,
+} from '@coreui/react'
+import '@coreui/coreui/dist/css/coreui.min.css'
+
+import { StyledNavbar, StyledOffcanvas, StyledNavbarToggler, StyledNavLink } from './styles'
 
 export function Header() {
+    const [visible, setVisible] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20)
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
-        <CustomNavbar>
-            <Navbar expand="lg" className="bg-transparent position-relative z-3">
-                <Container fluid>
-                    <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
+        <StyledNavbar className={scrolled ? 'scrolled' : ''}>
+            <CContainer fluid className="d-flex justify-content-end align-items-center">
+                {/* Links Desktop */}
+                <CNavbarNav className="d-none d-lg-flex flex-row gap-5 justify-content-end">
+                    <CNavItem>
+                        <StyledNavLink href="#">Home</StyledNavLink>
+                    </CNavItem>
+                    <CNavItem>
+                        <StyledNavLink href="#">Portfólio</StyledNavLink>
+                    </CNavItem>
+                    <CNavItem>
+                        <StyledNavLink href="#">Contato</StyledNavLink>
+                    </CNavItem>
+                </CNavbarNav>
 
-                    <Navbar.Offcanvas
-                        id="offcanvasNavbar-expand-lg"
-                        aria-labelledby="offcanvasNavbarLabel-expand-lg"
-                        placement="end"
-                        className="bg-dark text-white" // 👈 Fundo preto e texto branco
-                    >
-                        <Offcanvas.Header closeButton closeVariant="white">
-                            <Offcanvas.Title id="offcanvasNavbarLabel-expand-lg" className="text-white">
-                                Menu
-                            </Offcanvas.Title>
-                        </Offcanvas.Header>
+                {/* Botão collapse Mobile */}
+                <StyledNavbarToggler
+                    aria-controls="offcanvasNavbar"
+                    aria-label="Toggle navigation"
+                    className="d-lg-none ms-3"
+                    onClick={() => setVisible(!visible)}
+                />
 
-                        <Offcanvas.Body>
-                            <Nav className="justify-content-end flex-grow-1 gap-4 p-2">
-                                <Nav.Link href="#" className="text-white">Home</Nav.Link>
-                                <Nav.Link href="#" className="text-white">Portfólio</Nav.Link>
-                                <Nav.Link href="#" className="text-white">Contato</Nav.Link>
-                            </Nav>
-                        </Offcanvas.Body>
-                    </Navbar.Offcanvas>
-                </Container>
-            </Navbar>
-        </CustomNavbar>
-    );
+                {/* Collapse Offcanvas */}
+                <StyledOffcanvas
+                    id="offcanvasNavbar"
+                    placement="end"
+                    visible={visible}
+                    onHide={() => setVisible(false)}
+                >
+                    <COffcanvasHeader>
+                        <COffcanvasTitle style={{ color: 'white' }}>Menu</COffcanvasTitle>
+                        <CCloseButton className="text-reset" onClick={() => setVisible(false)} />
+                    </COffcanvasHeader>
+                    <COffcanvasBody>
+                        <CNavbarNav className="flex-column gap-3">
+                            <CNavItem>
+                                <StyledNavLink href="#">Home</StyledNavLink>
+                            </CNavItem>
+                            <CNavItem>
+                                <StyledNavLink href="#">Portfólio</StyledNavLink>
+                            </CNavItem>
+                            <CNavItem>
+                                <StyledNavLink href="#">Contato</StyledNavLink>
+                            </CNavItem>
+                        </CNavbarNav>
+                    </COffcanvasBody>
+                </StyledOffcanvas>
+            </CContainer>
+        </StyledNavbar>
+    )
 }
