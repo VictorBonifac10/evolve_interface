@@ -5,26 +5,18 @@ export const CardGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 16px;
-  /* altura removida */
-  /* height: 100vh; */
 
-  /* cria espaço embaixo para não colar no vídeo */
-  margin-bottom: 100px;
-
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 850px) {
     grid-template-columns: 1fr;
-    padding: 20px 10px;
-    margin-bottom: 80px;
   }
-
 `;
+
 
 export const Card = styled.div`
   border-radius: 1rem;
@@ -34,6 +26,7 @@ export const Card = styled.div`
   position: relative;
   overflow: hidden;
   transition: 1s;
+  width: 100%;
   background: linear-gradient(318deg, #2814da2b, #c012a627, #00aaff34, #1b1b1b3e, #0000002b);
   background-size: 1000% 1000%;
   
@@ -64,11 +57,15 @@ animation: Coolgradient 41s linear infinite;
 }
 
 &:hover{
-
-      transform: scale(1.05);
-      border: 1px solid #fff;
-
+    transform: scale(1.05);
+    border: 1px solid #fff;
 }
+
+  @media (max-width: 850px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const CardTitle = styled.div`
@@ -90,5 +87,9 @@ export const CardTitle = styled.div`
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
+  }
+
+  @media (max-width: 850px) {
+    justify-content: center;
   }
 `;

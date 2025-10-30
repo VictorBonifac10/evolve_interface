@@ -60,16 +60,4 @@ export const Button = styled.button`
       font-size: 24px;
     }
   }
-
-  @media (max-width: 360px) {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 90vw; /* garante que não vaze */
-    h2 {
-      font-size: 14px;
-    }
-    p {
-      font-size: 12px;
-    }
-  }
 `;

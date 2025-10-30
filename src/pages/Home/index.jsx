@@ -1,6 +1,6 @@
-import { Button, ClientCarousel, Header, ServicesCards, SupportButton, Title } from "../../components";
+import { Button, ClientCarousel, Footer, Header, ServicesCards, SupportButton, Title } from "../../components";
 
-import { ContainerBody, Banner, ContainerTop, ContentLeft, ContentRight, FirstDescription, SecondDescription, ContainerMain, ContainerAbout, Text, ContainerServices, ContainerPortfolio, Mask, ContainerClients, ContainerContact, ContactCard, ContainerFooter } from "./styles";
+import { ContainerBody, Banner, ContainerTop, ContentLeft, ContentRight, FirstDescription, SecondDescription, ContainerMain, ContainerAbout, Text, ContainerServices, ContainerPortfolio, Mask, ContainerClients, ContainerContact, ContactCard} from "./styles";
 
 import Logo from '../../assets/Logo.png'
 import videoBanner from '../../assets/videoBanner.mp4'
@@ -26,9 +26,9 @@ export function Home() {
                             <SecondDescription>
                                 Desenvolvemos soluções personalizadas com preço acessível para levar sua empresa ao próximo nível.
                             </SecondDescription>
-
-                            <Button>Veja mais <i className="ri-arrow-right-down-long-line"></i></Button>
-
+                            <div className="custom-button">
+                                <Button>Veja mais <i className="ri-arrow-right-down-long-line"></i></Button>
+                            </div>
                         </ContentLeft>
                         <ContentRight>
                             <i className="ri-whatsapp-line"></i>
@@ -89,7 +89,9 @@ export function Home() {
                         </Text>
                     </div>
                     <br />
-                    <Button>Veja mais <i className="ri-arrow-right-down-long-line"></i></Button>
+                    <div className="custom-button">
+                        <Button>Veja mais <i className="ri-arrow-right-down-long-line"></i></Button>
+                    </div>
                 </ContainerPortfolio>
                 <ContainerClients>
                     <Title>Clientes</Title>
@@ -129,34 +131,7 @@ export function Home() {
                     </div>
                 </ContainerContact>
             </ContainerMain>
-            <ContainerFooter>
-                <img src={Logo} alt='Logo da Empresa' />
-                <Text>
-                    Lorem, ipsum dolor sit am Laudantium autem quisquam possimus debitis officiis sapiente, et quas eligendi totam!
-                </Text>
-                <ul>
-                    <li>
-                        Home
-                    </li>
-                    <li>
-                        Portfólio
-                    </li>
-                    <li>
-                        Contato
-                    </li>
-                    <li>
-                        Termos e Condições
-                    </li>
-                </ul>
-                <div>
-                    <i className="ri-whatsapp-line"></i>
-                    <i className="ri-google-line"></i>
-                    <i className="ri-instagram-line"></i>
-                </div>
-                <Text>
-                    © 2025 evolve solutions - All rights reserved.
-                </Text>
-            </ContainerFooter>
+            <Footer />
         </ContainerBody>
     )
 }

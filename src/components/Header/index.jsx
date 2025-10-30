@@ -50,6 +50,7 @@ export function Header() {
                 <StyledOffcanvas
                     id="offcanvasNavbar"
                     placement="end"
+                    portal={true}
                     visible={visible}
                     onHide={() => setVisible(false)}
                 >
