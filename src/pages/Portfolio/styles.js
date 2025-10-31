@@ -6,8 +6,11 @@ export const PortfolioContainer = styled.div`
 
 export const CardContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 100px 0px;
+    gap: 160px;
 `;
 
 export const ProductCard = styled.div`
@@ -15,8 +18,7 @@ export const ProductCard = styled.div`
   justify-content: center;
   align-items: center;
   gap: 15%;
-  width: 100%;
-  margin: 80px;
+  width: 85%;
   position: relative; 
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 40px;
@@ -24,6 +26,11 @@ export const ProductCard = styled.div`
   padding: 25px;
   color: #fff;
   transition: 1s;
+
+  @media(max-width: 870px){
+    flex-direction: column;
+    text-align: center;
+  }
 
   video {
     position: absolute;
@@ -39,15 +46,34 @@ export const ProductCard = styled.div`
     position: relative;
     z-index: 2;
     max-width: 550px;
+
+    @media(max-width: 870px){
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  } 
   }
 
-  .content-img{
+  img{
     position: relative;
     z-index: 2;
+    
+    @media(max-width: 870px){
+      width: 300px;
+      margin-top: 20px;
+    }
   }
 
   .custom-button{
     width: 50%;
+
+  @media(max-width: 870px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
   }
 
   &:hover{
@@ -55,10 +81,6 @@ export const ProductCard = styled.div`
     border: 1px solid #fff;
 }
   
-  @media (max-width: 850px) {
-      padding: 50px 20px;
-      margin-top: 50px;
-  }
 `;
 
 export const Mask = styled.div`
@@ -91,16 +113,24 @@ export const BenefitsContainer = styled.div`
   gap: 20px;
   margin: 30px 0px 30px 0px;
 
-  .benefits{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  gap: 20px;
 
-  .benefit-icon{
-    display: flex;
+  @media(max-width: 870px){
+    justify-content: center;
     align-items: center;
-    gap: 8px;
+    max-width: 100%;
+  } 
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
 
     i{
       border: 1px solid #fff;
