@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const ContainerButton = styled.button`
-    background-color: #fff;
-    border: none;
+    background-color: ${(props) => (props.variant === "secondary" ? "transparent" : "#fff")};
+    border: ${(props) => (props.variant === "secondary" ? "1px solid #25D366" : "none")};
+    color: ${(props) => (props.variant === "secondary" ? "#25D366" : "#000")};
     border-radius: 5px;
     padding: 14px;
     width: 100%;
@@ -19,7 +20,8 @@ export const ContainerButton = styled.button`
     gap: 10px;
 
     &:hover{
-        background-color: #ffffffc4;
+        background-color: ${(props) => (props.variant === "secondary" ? "#25D366" : "#ffffffc4")};
+        color: ${(props) => (props.variant === "secondary" ? "#fff" : "#000")};
     }
 
     @media (max-width: 1085px) {

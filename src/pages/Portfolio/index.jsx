@@ -12,6 +12,8 @@ export function Portfolio() {
             <Header />
             <SupportButton />
             <CardContainer>
+                <Title>Portifolio</Title>
+                <p className="introduction">Cada negócio tem uma história única e o seu site precisa refletir isso. Oferecemos soluções digitais sob medida para cada objetivo, veja abaixo ▼</p>
                 {products.map((data) => (
                     <ProductCard >
                         <video src={videoPortfolio} preload="none" autoPlay muted loop></video>
@@ -30,8 +32,15 @@ export function Portfolio() {
                                 </div>
                             </BenefitsContainer>
                             <div className="custom-button">
-                                <Button>Veja mais<i className="ri-arrow-right-down-long-line"></i>
+                                <Button>
+                                    Ver modelo
+                                    <i className="ri-arrow-right-down-long-line"></i>
                                     <a href={data.link}></a>
+                                </Button>
+                                <Button variant="secondary">
+                                    <i class="ri-whatsapp-line"></i>
+                                    Orçamento
+                                    <a href="#"></a>
                                 </Button>
                             </div>
                         </div>

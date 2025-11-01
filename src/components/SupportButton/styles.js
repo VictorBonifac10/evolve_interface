@@ -5,13 +5,13 @@ export const Button = styled.button`
   border: 1px solid #00fbff96;
   border-radius: 8px;
   padding: 12px;
-  width: clamp(200px, 80vw, 320px); /* 🔥 Responsivo */
+  width: clamp(200px, 80vw, 320px); 
   font-size: 12px;
 
   position: fixed;
   z-index: 3;
   bottom: 20px;
-  right: 20px; /* use valores fixos em vez de margin */
+  right: 20px; 
   
   display: flex;
   align-items: center;
@@ -42,10 +42,9 @@ export const Button = styled.button`
 
   &:hover {
     background-position: left bottom;
-    border: 1px solid #b3d69bff;
+    border: 1px solid #ffffffff;
   }
 
-  /* 🔧 Ajustes extras para telas pequenas */
   @media (max-width: 480px) {
     right: 10px;
     bottom: 10px;

@@ -11,6 +11,15 @@ export const CardContainer = styled.div`
     align-items: center;
     margin: 100px 0px;
     gap: 160px;
+
+    .introduction {
+      color: #fff;
+      font-size: 20px;
+      margin-top: -130px;
+      margin-bottom: -50px;
+      text-align: center;
+      max-width: 770px;
+    }
 `;
 
 export const ProductCard = styled.div`
@@ -66,11 +75,13 @@ export const ProductCard = styled.div`
     }
   }
 
+
   .custom-button{
-    width: 50%;
+    display: flex;
+    gap: 10px;
+    width: 70%;
 
   @media(max-width: 870px){
-    display: flex;
     justify-content: center;
     align-items: center;
   } 
